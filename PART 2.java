@@ -161,7 +161,7 @@ class CarLoan extends Expense {
         double periodOfPayment = monthsToRepay/12;
         double carLoanRepayment = principal*(1+monthlyInterestRate*periodOfPayment);
         double monthlyCarPayment = carLoanRepayment/monthsToRepay;
-        double monthlyCarInstallment = monthlyCarPayment + insurancePremium; // Total monthly cost = loan repayment + insurance premium
+        double monthlyCarInstallment = monthlyCarPayment + insurancePremium; // adding monthly car payment plus insurance premium
         return monthlyCarInstallment ; 
     }
 }
@@ -265,7 +265,7 @@ public class Part1I {
             System.out.println("Enter the estimated monthly insurance premium: ");
             double insurancePremium = input.nextDouble();
 
-            CarLoan carLoan = new CarLoan(model,manufacturer, vehiclePurchasePrice, vehicleDeposit, vehicleInterestRate, insurancePremium, monthsToRepay); // 5 years = 60 months
+            CarLoan carLoan = new CarLoan(model,manufacturer, vehiclePurchasePrice, vehicleDeposit, vehicleInterestRate, insurancePremium, monthsToRepay); 
             expenses.add(carLoan);
             monthlyCarPayment = carLoan.totalExpenses();
         }
@@ -291,12 +291,6 @@ public class Part1I {
             System.out.println(expense.toString());
         }
 
-
-// Display the breakdown of expenses
-       // System.out.println("\n----- Expenses Breakdown ----");
-           // for (Expense expense : expenses){
-             //  System.out.println(expense.toString());
-           // }
             
         double availableMoney = netIncome - totalExpenses;
         // displaying the results
