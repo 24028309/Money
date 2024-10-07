@@ -265,7 +265,7 @@ public class Part1I {
             System.out.println("Enter the estimated monthly insurance premium: ");
             double insurancePremium = input.nextDouble();
 
-            CarLoan carLoan = new CarLoan(model,manufacturer, vehiclePurchasePrice, vehicleDeposit, vehicleInterestRate, insurancePremium, monthsToRepay); // 5 years = 60 months
+            CarLoan carLoan = new CarLoan(model,manufacturer, vehiclePurchasePrice, vehicleDeposit, vehicleInterestRate, insurancePremium, monthsToRepay); 
             expenses.add(carLoan);
             monthlyCarPayment = carLoan.totalExpenses();
         }
@@ -279,7 +279,7 @@ public class Part1I {
             totalExpenses +=  expense.totalExpenses();
         }
       
-      
+        // checking if the total expenditure does not exceed 75 % of gross income           
         if (totalExpenses > 0.75 * monthlyIncome) {
             System.out.println("Warning: Your total expenses exceed 75% of your gross income.");
         }
@@ -290,13 +290,6 @@ public class Part1I {
         for (Expense expense : expenses) {
             System.out.println(expense.toString());
         }
-
-
-// Display the breakdown of expenses
-       // System.out.println("\n----- Expenses Breakdown ----");
-           // for (Expense expense : expenses){
-             //  System.out.println(expense.toString());
-           // }
             
         double availableMoney = netIncome - totalExpenses;
         // displaying the results
